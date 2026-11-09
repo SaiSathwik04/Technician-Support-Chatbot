@@ -1,0 +1,28 @@
+Pump Troubleshooting Manual - Industrial Systems
+
+CENTRIFUGAL PUMP PROBLEMS:
+
+Pump Won't Prime:
+- Check suction line for air leaks
+- Verify pump casing is filled with liquid
+- Ensure suction lift not excessive
+- Check foot valve operation
+
+Low Flow or Pressure:
+- Inspect impeller for wear or damage
+- Check internal wear ring clearances
+- Verify discharge valve is open
+- Clean suction strainer
+- Check pump speed with tachometer
+
+Cavitation Problems:
+- Calculate NPSH Available vs Required
+- Reduce suction lift if possible
+- Increase suction pipe diameter
+- Check liquid temperature and vapor pressure
+
+PREVENTIVE MAINTENANCE:
+Daily: Check discharge pressure, bearing temperature, listen for unusual noises
+Weekly: Lubricate bearings, check vibration levels, inspect coupling
+Monthly: Performance testing, alignment check, oil analysis
+Quarterly: Bearing replacement if needed, comprehensive inspection

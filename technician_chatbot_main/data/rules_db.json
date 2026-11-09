@@ -1,0 +1,128 @@
+{
+  "greetings": {
+    "patterns": [
+      "hello",
+      "hi",
+      "hey",
+      "good morning",
+      "good afternoon",
+      "greetings"
+    ],
+    "responses": [
+      "Hello! I'm here to help you with technical and maintenance questions. What can I assist you with today?",
+      "Hi there! I'm your technical support assistant. How can I help you with your maintenance needs?",
+      "Good day! I'm ready to help with any technical or equipment-related questions you have."
+    ]
+  },
+  "goodbye": {
+    "patterns": [
+      "bye",
+      "goodbye",
+      "see you",
+      "farewell",
+      "thanks goodbye",
+      "exit"
+    ],
+    "responses": [
+      "Goodbye! Feel free to return anytime you need technical assistance.",
+      "Take care! I'm here whenever you need help with maintenance or technical issues.",
+      "See you later! Stay safe and don't hesitate to ask if you have more questions."
+    ]
+  },
+  "motor_wont_start": {
+    "patterns": [
+      "motor won't start",
+      "motor not starting",
+      "engine won't start",
+      "motor dead",
+      "motor problem"
+    ],
+    "responses": [
+      "Motor not starting? Here's a quick checklist:\n\n\ud83d\udd0d **BASIC CHECKS:**\n1. **Power Supply** - Verify voltage at motor terminals\n2. **Overload Relays** - Reset if tripped  \n3. **Motor Starter Contacts** - Check for burning or pitting\n4. **Control Voltage** - Ensure proper voltage to starter coil\n5. **Mechanical Binding** - Try turning shaft by hand\n6. **Fuses/Breakers** - Verify all are in good condition\n\n\u26a0\ufe0f **SAFETY FIRST**: Always use proper lockout/tagout procedures!\n\nIf these steps don't resolve the issue, you may need to test motor windings for continuity and insulation resistance."
+    ]
+  },
+  "pump_problems": {
+    "patterns": [
+      "pump not working",
+      "pump failure",
+      "no flow",
+      "pump stopped",
+      "pump issue"
+    ],
+    "responses": [
+      "Pump troubleshooting steps:\n\n\ud83d\udca7 **SYSTEMATIC DIAGNOSIS:**\n1. **Power & Motor Check** - Verify pump is getting power and motor is running\n2. **Suction Line** - Check for blockages or air leaks\n3. **Priming** - Ensure pump is properly primed\n4. **Discharge Valve** - Verify it's open\n5. **Cavitation Check** - Listen for unusual noise/vibration\n6. **Impeller Inspection** - Look for damage or clogging\n7. **System Pressure** - Verify it's not too high\n8. **Seal Inspection** - Check for leakage\n\n\ud83d\udca1 **Pro Tip**: For centrifugal pumps, also verify rotation direction is correct."
+    ]
+  },
+  "no_power": {
+    "patterns": [
+      "no power",
+      "power outage",
+      "electrical problem",
+      "no electricity",
+      "power issue"
+    ],
+    "responses": [
+      "No power troubleshooting:\n\n\u26a1 **ELECTRICAL DIAGNOSTICS:**\n1. **Main Breaker Panel** - Check for tripped breakers\n2. **Power Source** - Use multimeter to verify voltage\n3. **Fuse Inspection** - Check all fuses in the circuit\n4. **Connection Check** - Look for loose or burned connections\n5. **GFCI Outlets** - Test and reset if necessary\n6. **Wiring Inspection** - Check for damaged wiring or conduit\n7. **Transformer Check** - For low voltage systems\n\n\u26a0\ufe0f **CRITICAL SAFETY**: Always use proper PPE and lockout/tagout procedures when working with electrical systems!\n\n\ud83d\udd27 **Tools Needed**: Multimeter, voltage tester, insulated tools"
+    ]
+  },
+  "hvac_issues": {
+    "patterns": [
+      "hvac problem",
+      "air conditioning",
+      "heating problem",
+      "ventilation issue",
+      "hvac"
+    ],
+    "responses": [
+      "HVAC system troubleshooting:\n\n\ud83c\udf21\ufe0f **SYSTEMATIC APPROACH:**\n\n**Basic Checks:**\n1. **Thermostat** - Check settings and battery\n2. **Air Filters** - Replace if dirty (check monthly)\n3. **Power Supply** - Verify power to HVAC unit\n4. **Circuit Breakers** - Check HVAC-specific breakers\n\n**System Inspection:**\n5. **Ductwork** - Look for leaks or blockages\n6. **Condenser Coils** - Clean outdoor unit coils\n7. **Refrigerant Levels** - Requires certified technician\n8. **Blower Motor** - Check motor and belts\n9. **Airflow** - Verify proper airflow at vents\n\n\ud83d\udd04 **Maintenance Tip**: Regular maintenance prevents most HVAC issues!\n\ud83d\udcc5 **Schedule**: Change filters monthly, professional service twice yearly"
+    ]
+  },
+  "safety_procedures": {
+    "patterns": [
+      "safety",
+      "lockout tagout",
+      "loto",
+      "safety procedure",
+      "ppe",
+      "safety protocol"
+    ],
+    "responses": [
+      "Essential safety procedures:\n\n\ud83d\udd12 **LOCKOUT/TAGOUT (LOTO):**\n1. **Notification** - Inform affected personnel\n2. **Proper Shutdown** - Follow equipment shutdown procedure\n3. **Energy Isolation** - Isolate electrical, pneumatic, hydraulic sources\n4. **Lock & Tag Application** - Apply personal locks and danger tags\n5. **Verification** - Test to ensure complete energy isolation\n6. **Work Completion** - Only lock owner removes their lock\n\n\ud83e\uddba **PPE Requirements:**\n- Safety glasses/goggles\n- Hard hat (overhead hazards)\n- Work gloves (task-appropriate)\n- Steel-toed boots\n- Hearing protection (loud areas)\n- Fall protection (above 6 feet)\n\n\u26a0\ufe0f **Remember**: Always follow company-specific safety protocols!"
+    ]
+  },
+  "maintenance_schedule": {
+    "patterns": [
+      "maintenance schedule",
+      "when to service",
+      "maintenance frequency",
+      "preventive maintenance"
+    ],
+    "responses": [
+      "General maintenance frequencies:\n\n\ud83d\udcc5 **MAINTENANCE SCHEDULE:**\n\n**DAILY CHECKS:**\n- Visual inspections\n- Operating parameter checks\n- Lubrication points\n- Safety device verification\n\n**WEEKLY MAINTENANCE:**\n- Detailed inspections\n- Filter checks\n- Belt tension verification\n- Fluid level checks\n\n**MONTHLY TASKS:**\n- Vibration analysis\n- Oil sampling\n- Alignment checks\n- Performance testing\n\n**QUARTERLY MAINTENANCE:**\n- Major inspections\n- Calibrations\n- Bearing assessments\n- Deep cleaning\n\n**ANNUAL OVERHAULS:**\n- Component replacements\n- Major servicing\n- Record updates\n- Performance reviews\n\n\ud83d\udcdd **Note**: Always consult equipment manuals for specific intervals!"
+    ]
+  },
+  "troubleshooting_steps": {
+    "patterns": [
+      "troubleshooting",
+      "diagnostic",
+      "how to diagnose",
+      "finding problem",
+      "problem solving"
+    ],
+    "responses": [
+      "Systematic troubleshooting approach:\n\n\ud83d\udd0d **PROFESSIONAL METHODOLOGY:**\n\n**1\ufe0f\u20e3 INFORMATION GATHERING**\n   - What was happening when problem occurred?\n   - Any recent changes or maintenance?\n   - Error codes or unusual symptoms?\n\n**2\ufe0f\u20e3 VISUAL INSPECTION**\n   - Look for obvious damage, leaks, loose connections\n   - Check indicators and displays\n   - Listen for unusual noises\n\n**3\ufe0f\u20e3 CHECK BASICS**\n   - Power supply and connections\n   - Control settings and parameters\n   - Mechanical connections\n\n**4\ufe0f\u20e3 SYSTEMATIC TESTING**\n   - Work from simple to complex\n   - Test one component at a time\n   - Document all findings\n\n**5\ufe0f\u20e3 VERIFY SOLUTION**\n   - Test operation after repair\n   - Monitor for problem recurrence\n   - Update maintenance records\n\n\ud83d\udd0d **Remember**: Patience and systematic approach prevent misdiagnosis!"
+    ]
+  },
+  "help": {
+    "patterns": [
+      "help",
+      "what can you do",
+      "capabilities",
+      "commands",
+      "assist"
+    ],
+    "responses": [
+      "I can help you with:\n\n\ud83d\udd27 **TECHNICAL SUPPORT AREAS:**\n\n**Equipment Troubleshooting:**\n- Motors, pumps, HVAC systems\n- Electrical and mechanical issues\n- Performance problems\n\n**Maintenance Support:**\n- Preventive maintenance schedules\n- Maintenance procedures\n- Equipment care guidelines\n\n**Safety Guidance:**\n- Lockout/tagout procedures\n- PPE requirements\n- Safety protocols\n\n**Technical Assistance:**\n- Diagnostic procedures\n- Step-by-step guides\n- Best practices\n\n**Example questions:**\n- \"Motor won't start\"\n- \"How often should I service the pump?\"\n- \"What are the lockout tagout procedures?\"\n- \"HVAC system not cooling\"\n- \"Safety procedures for electrical work\"\n\nJust describe your issue or ask about any maintenance topic!"
+    ]
+  }
+}

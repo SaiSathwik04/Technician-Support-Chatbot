@@ -1,0 +1,38 @@
+Motor Maintenance Guide - Industrial Equipment
+
+DAILY INSPECTIONS:
+- Check for unusual vibration or noise during operation
+- Inspect motor housing for excessive heat (>65°C normal operating temp)
+- Look for oil leaks around bearing housings
+- Verify motor mounting bolts are tight
+- Check cooling fan operation (if equipped)
+- Inspect electrical connections for signs of arcing or overheating
+
+WEEKLY MAINTENANCE:
+- Record motor operating temperature at nameplate location
+- Measure and record phase voltages (should be within 1% of each other)
+- Check current balance between phases (should be within 5%)
+- Inspect conduit connections and junction boxes
+- Verify proper grounding continuity
+
+MONTHLY MAINTENANCE:
+- Insulation resistance testing with megohmmeter
+- Vibration analysis of motor and bearings
+- Lubrication of bearings per manufacturer schedule
+- Check coupling alignment using dial indicators
+
+TROUBLESHOOTING:
+Motor Won't Start:
+1. Check voltage at motor terminals with multimeter
+2. Verify all three phases present (for 3-phase motors)
+3. Check overload relay setting and condition
+4. Test motor starter operation
+5. Check for mechanical binding by hand rotation
+6. Measure winding resistance with ohmmeter
+
+Motor Overheating:
+1. Measure actual current vs. nameplate rating
+2. Check voltage balance between phases
+3. Clean air passages and check fan operation
+4. Check bearing temperature and noise
+5. Tighten all electrical connections

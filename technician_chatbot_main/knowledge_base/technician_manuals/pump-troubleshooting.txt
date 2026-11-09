@@ -1,0 +1,310 @@
+# Pump Troubleshooting Manual - Industrial Systems
+
+## SECTION 1: PUMP OVERVIEW
+This manual covers troubleshooting procedures for centrifugal pumps, positive displacement pumps, and specialty pumps commonly used in industrial applications.
+
+## SECTION 2: CENTRIFUGAL PUMP TROUBLESHOOTING
+
+### 2.1 PUMP WON'T PRIME OR START
+**Symptoms:** Pump runs but no flow, cavitation noise, excessive vibration
+
+**Possible Causes:**
+- Air leaks in suction line
+- Pump not filled with liquid
+- Suction lift too high
+- Foot valve stuck closed
+- Impeller clogged
+- Wrong rotation direction
+
+**Diagnostic Steps:**
+1. **Check Suction Line Integrity:**
+   - Inspect all joints for air leaks
+   - Test suction line under vacuum
+   - Check packing gland for air entry
+   - Verify foot valve operation
+
+2. **Verify Pump Priming:**
+   - Fill pump casing completely with liquid
+   - Vent all air from casing and suction line
+   - Check priming valve operation
+   - Ensure suction line slopes upward to pump
+
+3. **Calculate Net Positive Suction Head (NPSH):**
+   - NPSH Available = Atmospheric Pressure + Static Head - Vapor Pressure - Friction Losses
+   - Must exceed NPSH Required by 2-3 feet minimum
+   - Reduce suction lift if necessary
+
+### 2.2 LOW FLOW OR PRESSURE
+**Symptoms:** Reduced output, poor performance, increased power consumption
+
+**Possible Causes:**
+- Impeller wear or damage
+- Internal wear ring clearances excessive
+- Discharge valve partially closed
+- Suction strainer clogged
+- Speed too low
+- Specific gravity higher than design
+
+**Diagnostic Steps:**
+1. **Impeller Inspection:**
+   - Remove pump casing to inspect impeller
+   - Check for erosion, corrosion, or mechanical damage
+   - Measure impeller diameter (normal wear: 5% reduction maximum)
+   - Check impeller-to-casing clearances
+
+2. **Performance Testing:**
+   - Install pressure gauges at suction and discharge
+   - Measure flow rate with calibrated flow meter
+   - Calculate pump head: H = (P₂ - P₁)/γ + (V₂² - V₁²)/2g + (Z₂ - Z₁)
+   - Compare to manufacturer's curve
+
+3. **System Analysis:**
+   - Check all valves in discharge line
+   - Inspect and clean suction strainer
+   - Verify pump speed with tachometer
+   - Check coupling for slippage
+
+### 2.3 EXCESSIVE POWER CONSUMPTION
+**Symptoms:** High motor current, tripped overloads, increased energy costs
+
+**Possible Causes:**
+- Pump running beyond best efficiency point
+- Impeller diameter too large
+- Liquid density higher than expected
+- Misalignment
+- Worn bearings
+- Damaged impeller causing turbulence
+
+**Diagnostic Steps:**
+1. **Operating Point Analysis:**
+   - Plot current operating point on pump curve
+   - Check if operating at low flow/high head (left of BEP)
+   - Verify system head curve matches pump selection
+
+2. **Mechanical Inspection:**
+   - Check shaft alignment with dial indicators
+   - Test bearing condition with vibration analysis
+   - Inspect coupling for wear or damage
+   - Measure motor current and compare to nameplate
+
+### 2.4 CAVITATION PROBLEMS
+**Symptoms:** Noise like gravel in pump, vibration, reduced performance, pitting damage
+
+**Possible Causes:**
+- Insufficient NPSH available
+- Suction pressure too low
+- Liquid temperature too high
+- Pump operating at excessive flow
+- Suction line restrictions
+
+**Diagnostic Steps:**
+1. **NPSH Calculation:**
+   - Measure suction pressure at pump inlet
+   - Check liquid temperature and vapor pressure
+   - Calculate friction losses in suction piping
+   - Compare NPSH available to NPSH required
+
+2. **System Modifications:**
+   - Lower pump elevation
+   - Increase suction pipe diameter
+   - Reduce suction line length
+   - Install suction stabilizer if necessary
+   - Throttle discharge valve to reduce flow
+
+## SECTION 3: POSITIVE DISPLACEMENT PUMP TROUBLESHOOTING
+
+### 3.1 RECIPROCATING PUMPS
+**Common Issues:**
+- Valve failures (suction/discharge)
+- Packing leakage
+- Pulsation problems
+- Rod/crosshead wear
+
+**Diagnostic Procedures:**
+1. **Valve Testing:**
+   - Remove valve covers and inspect seats
+   - Check valve spring tension
+   - Test valve lift and timing
+   - Replace worn or damaged valves
+
+2. **Packing Maintenance:**
+   - Adjust packing gland gradually
+   - Replace packing rings in sets
+   - Check shaft sleeve condition
+   - Maintain slight leakage for lubrication
+
+### 3.2 ROTARY PUMPS (Gear, Screw, Vane)
+**Common Issues:**
+- Excessive internal leakage
+- Wear of rotating elements
+- Bearing failures
+- Seal problems
+
+**Diagnostic Procedures:**
+1. **Clearance Checks:**
+   - Measure clearances with feeler gauges
+   - Check gear/rotor-to-housing clearances
+   - Verify end plate clearances
+   - Replace worn components as needed
+
+2. **Performance Testing:**
+   - Measure slip rate at various pressures
+   - Check volumetric efficiency
+   - Monitor bearing temperatures
+   - Verify seal effectiveness
+
+## SECTION 4: BEARING AND SEAL MAINTENANCE
+
+### 4.1 BEARING PROBLEMS
+**Symptoms:** High temperature, noise, vibration, grease leakage
+
+**Causes and Solutions:**
+- **Overlubrication:** Remove excess grease, establish proper relubrication schedule
+- **Underlubrication:** Add specified grease quantity, check automatic lubricators
+- **Contamination:** Replace bearings and seals, improve environmental protection
+- **Misalignment:** Realign pump and driver, check foundation settlement
+
+**Bearing Replacement Procedure:**
+1. Remove old bearings with proper pullers
+2. Clean bearing housing thoroughly
+3. Heat new bearings to 80-100°C
+4. Install with proper tools (not hammers)
+5. Apply correct grease quantity
+6. Verify shaft runout <0.002 inches
+
+### 4.2 MECHANICAL SEAL MAINTENANCE
+**Common Seal Failures:**
+- **Face wear:** Hard particles in liquid, insufficient lubrication
+- **Secondary seal leakage:** Chemical attack, installation damage
+- **Spring failure:** Corrosion, fatigue, improper installation
+
+**Seal Installation Best Practices:**
+1. Clean all surfaces thoroughly
+2. Handle seal faces carefully - no contact
+3. Use proper installation tools
+4. Check seal chamber dimensions
+5. Verify flushing arrangements
+6. Follow manufacturer's torque specifications
+
+## SECTION 5: PUMP PERFORMANCE ANALYSIS
+
+### 5.1 EFFICIENCY CALCULATIONS
+**Overall Efficiency = (Water HP / Brake HP) × 100**
+
+Where:
+- Water HP = (Flow × Head × Specific Gravity) / 3960
+- Brake HP = Motor HP × Motor Efficiency × Motor Loading
+
+**Typical Efficiencies:**
+- Small pumps (<10 HP): 50-70%
+- Medium pumps (10-100 HP): 70-85%
+- Large pumps (>100 HP): 80-90%
+
+### 5.2 SYSTEM CURVE ANALYSIS
+**System Head = Static Head + Friction Head**
+- Static Head: Elevation difference + pressure difference
+- Friction Head: Pipe friction + fitting losses + valve losses
+
+**Friction Loss Calculation:**
+Hazen-Williams Formula: h = 10.67 × L × Q^1.852 / (C^1.852 × d^4.87)
+
+Where:
+- h = head loss (feet)
+- L = pipe length (feet)
+- Q = flow rate (GPM)
+- C = pipe roughness coefficient
+- d = pipe diameter (inches)
+
+## SECTION 6: PREVENTIVE MAINTENANCE SCHEDULE
+
+### 6.1 DAILY CHECKS
+- Monitor pump discharge pressure
+- Check bearing housing temperature
+- Listen for unusual noises
+- Verify proper motor current
+- Inspect for leaks at seals and flanges
+- Check cooling water flow (if applicable)
+
+### 6.2 WEEKLY MAINTENANCE
+- Lubricate bearings per schedule
+- Check and record vibration levels
+- Inspect coupling condition
+- Verify alignment marks
+- Clean strainers and filters
+- Check automatic control operation
+
+### 6.3 MONTHLY MAINTENANCE
+- Measure and record performance data
+- Check motor current and compare to baseline
+- Inspect foundation for cracks or settlement
+- Test emergency shutdown systems
+- Review maintenance records and trends
+
+### 6.4 QUARTERLY MAINTENANCE
+- Precision alignment check
+- Comprehensive vibration analysis
+- Thermographic inspection
+- Oil analysis (oil-lubricated bearings)
+- Overhaul relief valves and controls
+
+### 6.5 ANNUAL MAINTENANCE
+- Complete pump disassembly and inspection
+- Replace wear parts as needed
+- Pressure test all pressure vessels
+- Calibrate instrumentation
+- Update maintenance procedures
+
+## SECTION 7: SAFETY PROCEDURES
+
+### 7.1 LOCKOUT/TAGOUT REQUIREMENTS
+**Before Any Maintenance:**
+1. Shut down pump and lock out power
+2. Close and lock suction and discharge valves
+3. Relieve all pressure in system
+4. Drain pump casing if required
+5. Test for hazardous atmospheres
+6. Apply personal danger tags
+
+### 7.2 CONFINED SPACE ENTRY
+**For Pump Pit Work:**
+- Test atmosphere for oxygen, toxic gases, explosives
+- Use continuous air monitoring
+- Maintain attendant outside space
+- Use proper ventilation and lighting
+- Have rescue equipment readily available
+
+### 7.3 CHEMICAL HANDLING
+**When Working with Process Fluids:**
+- Know material safety data sheet requirements
+- Use appropriate PPE for chemical exposure
+- Have eyewash and safety shower available
+- Use proper decontamination procedures
+- Follow waste disposal regulations
+
+## SECTION 8: EMERGENCY PROCEDURES
+
+### 8.1 PUMP SEAL FAILURE
+1. Shut down pump immediately
+2. Close discharge valve
+3. Isolate pump from system
+4. Contain any spilled liquid
+5. Assess environmental impact
+6. Plan repair strategy
+
+### 8.2 BEARING FAILURE
+1. Stop pump immediately if safe to do so
+2. Allow bearing to cool before inspection
+3. Check for shaft damage
+4. Assess cause of failure
+5. Plan bearing replacement
+6. Check alignment before restart
+
+### 8.3 CAVITATION DAMAGE
+1. Reduce pump flow immediately
+2. Check suction pressure
+3. Lower pump speed if possible
+4. Inspect impeller for damage
+5. Calculate required NPSH margin
+6. Plan system modifications if needed
+
+This troubleshooting manual provides systematic approaches to diagnosing and resolving common pump problems in industrial applications.

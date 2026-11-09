@@ -1,0 +1,164 @@
+# Motor Maintenance Guide - Industrial Equipment
+
+## SECTION 1: OVERVIEW
+This guide covers maintenance procedures for AC induction motors, DC motors, and servo motors commonly found in industrial applications. Regular maintenance extends motor life and prevents costly breakdowns.
+
+## SECTION 2: DAILY INSPECTIONS
+Perform these checks at the start of each shift:
+
+### 2.1 VISUAL INSPECTION
+- Check for unusual vibration or noise during operation
+- Inspect motor housing for excessive heat (>65°C normal operating temp)
+- Look for oil leaks around bearing housings
+- Verify motor mounting bolts are tight
+- Check cooling fan operation (if equipped)
+- Inspect electrical connections for signs of arcing or overheating
+
+### 2.2 OPERATIONAL CHECKS
+- Monitor motor current draw using ammeter
+- Check operating voltage at motor terminals
+- Verify smooth startup and shutdown
+- Listen for bearing noise or grinding sounds
+- Check belt tension (if belt-driven) - 1/2 inch deflection per 12 inches of span
+
+## SECTION 3: WEEKLY MAINTENANCE
+
+### 3.1 TEMPERATURE MONITORING
+- Record motor operating temperature at nameplate location
+- Normal range: Ambient + 40-60°C depending on motor class
+- Class B insulation: Max 130°C (80°C rise + 40°C ambient + 10°C hot spot)
+- Class F insulation: Max 155°C (105°C rise + 40°C ambient + 10°C hot spot)
+
+### 3.2 ELECTRICAL CHECKS
+- Measure and record phase voltages (should be within 1% of each other)
+- Check current balance between phases (should be within 5%)
+- Inspect conduit connections and junction boxes
+- Verify proper grounding continuity
+
+### 3.3 MECHANICAL INSPECTION
+- Check coupling alignment using dial indicators
+- Inspect flexible coupling elements for wear
+- Verify belt condition and alignment (if applicable)
+- Check for soft foot condition using feeler gauges
+
+## SECTION 4: MONTHLY MAINTENANCE
+
+### 4.1 INSULATION RESISTANCE TESTING
+**Equipment Required:** Megohmmeter (1000V DC for motors up to 1000V)
+
+**Procedure:**
+1. Disconnect all power and lock out motor
+2. Disconnect motor leads from starter
+3. Test each winding to ground and between windings
+4. Minimum acceptable values:
+   - New motors: >100 megohms
+   - Motors in service: >1 megohm per 1000V + 1 megohm
+   - Below 1 megohm: Investigate further
+
+### 4.2 VIBRATION ANALYSIS
+- Use vibration meter to check overall levels
+- Normal levels: <0.3 inches/second for motors up to 1800 RPM
+- Record measurements at motor feet and bearing housings
+- Look for increases >25% from baseline readings
+
+### 4.3 LUBRICATION
+**Ball Bearings (Sealed):**
+- Typically maintenance-free for 40,000-50,000 hours
+- Replace when noise increases or temperature rises
+
+**Sleeve Bearings:**
+- Check oil level in sight glass
+- Oil should be at center of sight glass
+- Change oil every 8,760 hours (1 year) minimum
+- Use only specified viscosity oil
+
+**Grease Lubricated Bearings:**
+- Add grease through fittings while motor is running
+- Amount: Bearing housing volume × 0.5
+- Frequency: Every 2,000-10,000 hours depending on conditions
+- Use only specified NLGI Grade 2 or 3 grease
+
+## SECTION 5: TROUBLESHOOTING GUIDE
+
+### 5.1 MOTOR WON'T START
+**Possible Causes:**
+- No power to motor terminals
+- Blown fuses or tripped breakers
+- Overload relay tripped
+- Control circuit malfunction
+- Motor starter contacts burned
+- Single phasing condition
+- Mechanical binding
+
+**Diagnostic Steps:**
+1. Check voltage at motor terminals with multimeter
+2. Verify all three phases present (for 3-phase motors)
+3. Check overload relay setting and condition
+4. Test motor starter operation
+5. Check for mechanical binding by hand rotation
+6. Measure winding resistance with ohmmeter
+
+### 5.2 MOTOR OVERHEATING
+**Possible Causes:**
+- Overloading
+- Voltage imbalance (>2%)
+- Single phasing
+- Blocked ventilation
+- Bearing problems
+- Loose connections
+
+**Diagnostic Steps:**
+1. Measure actual current vs. nameplate rating
+2. Check voltage balance between phases
+3. Clean air passages and check fan operation
+4. Check bearing temperature and noise
+5. Tighten all electrical connections
+6. Verify proper ventilation clearances
+
+### 5.3 EXCESSIVE VIBRATION
+**Possible Causes:**
+- Misalignment
+- Unbalanced rotor
+- Worn bearings
+- Loose mounting
+- Bent shaft
+- Resonance with foundation
+
+**Diagnostic Steps:**
+1. Check motor mounting bolt tightness
+2. Perform precision alignment check
+3. Vibration analysis to identify frequency
+4. Check bearing condition
+5. Inspect coupling for wear or damage
+
+## SECTION 6: SAFETY PROCEDURES
+
+### 6.1 LOCKOUT/TAGOUT REQUIREMENTS
+- Always de-energize motor before maintenance
+- Lock out main disconnect and motor starter
+- Test with approved voltage tester
+- Apply personal danger tags
+- Wait for motor to come to complete stop
+
+### 6.2 PERSONAL PROTECTIVE EQUIPMENT
+- Safety glasses required at all times
+- Insulated tools for electrical work
+- Leather gloves when handling hot components
+- Hearing protection in high noise areas
+- Arc-rated clothing for energized electrical work
+
+## SECTION 7: MOTOR SPECIFICATIONS
+
+### Standard NEMA Frame Sizes:
+- 143T, 145T: 1-3 HP motors
+- 182T, 184T: 3-7.5 HP motors  
+- 213T, 215T: 7.5-15 HP motors
+- 254T, 256T: 15-30 HP motors
+- 284T, 286T: 30-50 HP motors
+- 324T, 326T: 50-75 HP motors
+
+### Standard Speeds (60 Hz):
+- 2-pole: 3600 RPM (3450 actual)
+- 4-pole: 1800 RPM (1750 actual)
+- 6-pole: 1200 RPM (1150 actual)
+- 8-pole: 900 RPM (850 actual)

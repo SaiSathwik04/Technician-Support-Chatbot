@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics & Metrics - Technician Support Chatbot{% endblock %}
+
+{% block navigation %}
+<nav class="bg-gray-800 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center space-x-4">
+                <a href="{{ url_for('index') }}" class="flex items-center space-x-2 text-white hover:text-gray-300">
+                    <i class="fas fa-tools text-xl"></i>
+                    <span class="font-semibold">Technician Support</span>
+                </a>
+                <span class="text-gray-400">|</span>
+                <span class="text-lg font-semibold">Analytics</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-sm text-gray-300">
+                    <i class="fas fa-user mr-1"></i>{{ current_user.username }}
+                </div>
+                <a href="{{ url_for('auth.logout') }}" class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded text-sm">
+                    <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Admin Navigation Tabs -->
+<div class="bg-gray-700 border-b border-gray-600">
+    <div class="container mx-auto px-4">
+        <div class="flex space-x-8">
+            <a href="{{ url_for('admin.dashboard') }}" 
+               class="py-3 px-1 border-b-2 border-transparent text-gray-300 hover:text-white hover:border-gray-300 font-medium text-sm">
+                <i class="fas fa-tachometer-alt mr-1"></i>Dashboard
+            </a>
+            <a href="{{ url_for('admin.metrics') }}" 
+               class="py-3 px-1 border-b-2 border-blue-500 text-blue-300 font-medium text-sm">
+                <i class="fas fa-chart-bar mr-1"></i>Analytics
+            </a>
+            <a href="{{ url_for('admin.chat_logs') }}" 
+               class="py-3 px-1 border-b-2 border-transparent text-gray-300 hover:text-white hover:border-gray-300 font-medium text-sm">
+                <i class="fas fa-comments mr-1"></i>Chat Logs
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <!-- Page Header -->
+    <div class="mb-8">
+        <h1 class="text-2xl font-bold text-gray-900">Analytics & Performance Metrics</h1>
+        <p class="text-gray-600">Comprehensive insights into chatbot performance and user interactions</p>
+    </div>
+    
+    <!-- Charts Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Daily Interactions Chart -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                <i class="fas fa-chart-line mr-2"></i>Daily Interactions (Last 30 Days)
+            </h3>
+            <canvas id="dailyInteractionsChart" height="300"></canvas>
+        </div>
+        
+        <!-- Source Distribution Chart -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                <i class="fas fa-chart-pie mr-2"></i>Response Source Distribution
+            </h3>
+            <canvas id="sourceChart" height="300"></canvas>
+        </div>
+        
+        <!-- Confidence Score Distribution -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                <i class="fas fa-chart-bar mr-2"></i>Confidence Score Distribution
+            </h3>
+            <canvas id="confidenceChart" height="300"></canvas>
+        </div>
+        
+        <!-- User Feedback Chart -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                <i class="fas fa-star mr-2"></i>User Feedback Distribution
+            </h3>
+            <canvas id="feedbackChart" height="300"></canvas>
+        </div>
+    </div>
+    
+    <!-- Detailed Statistics Table -->
+    <div class="bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">
+                <i class="fas fa-table mr-2"></i>Detailed Statistics
+            </h3>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Metric
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Value
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            Total Interactions
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ overview.total_interactions or 0 }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            Total number of user interactions
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            Average Confidence
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ ((overview.avg_confidence or 0) * 100) | round(1) }}%
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            Average intent classification confidence
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            User Satisfaction
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ "%.1f/5" | format(overview.avg_rating or 0) }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            Average user rating from feedback
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            Most Common Intent
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ overview.intent_distribution[0]._id if overview.intent_distribution else 'N/A' }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            Most frequently detected user intent
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Daily Interactions Chart
+    const dailyCtx = document.getElementById('dailyInteractionsChart').getContext('2d');
+    const dailyData = {{ daily_stats | tojson }};
+    
+    new Chart(dailyCtx, {
+        type: 'line',
+        data: {
+            labels: dailyData.map(item => item._id),
+            datasets: [{
+                label: 'Daily Interactions',
+                data: dailyData.map(item => item.count),
+                borderColor: '#3B82F6',
+                backgroundColor: '#3B82F6',
+                tension: 0.4,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+    // Source Distribution Chart
+    const sourceCtx = document.getElementById('sourceChart').getContext('2d');
+    const sourceData = {{ source_distribution | tojson }};
+    
+    new Chart(sourceCtx, {
+        type: 'doughnut',
+        data: {
+            labels: sourceData.map(item => item._id),
+            datasets: [{
+                data: sourceData.map(item => item.count),
+                backgroundColor: ['#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+    
+    // Confidence Distribution Chart
+    const confidenceCtx = document.getElementById('confidenceChart').getContext('2d');
+    const confidenceData = {{ confidence_distribution | tojson }};
+    
+    new Chart(confidenceCtx, {
+        type: 'bar',
+        data: {
+            labels: confidenceData.map(item => item._id + '-' + (item._id + 0.2)),
+            datasets: [{
+                label: 'Count',
+                data: confidenceData.map(item => item.count),
+                backgroundColor: '#8B5CF6'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+    // Feedback Chart
+    const feedbackCtx = document.getElementById('feedbackChart').getContext('2d');
+    const feedbackData = {{ feedback_distribution | tojson }};
+    
+    new Chart(feedbackCtx, {
+        type: 'bar',
+        data: {
+            labels: feedbackData.map(item => item._id + ' Star' + (item._id !== 1 ? 's' : '')),
+            datasets: [{
+                label: 'Count',
+                data: feedbackData.map(item => item.count),
+                backgroundColor: ['#EF4444', '#F59E0B', '#F59E0B', '#10B981', '#10B981']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}

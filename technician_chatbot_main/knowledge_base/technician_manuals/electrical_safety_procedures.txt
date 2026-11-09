@@ -1,0 +1,27 @@
+Electrical Safety Procedures - LOTO Requirements
+
+LOCKOUT/TAGOUT PROCEDURE:
+1. Preparation: Identify all energy sources, notify personnel
+2. Shutdown: Follow normal equipment shutdown sequence
+3. Isolation: Operate all energy-isolating devices
+4. Lockout: Apply individual locks and danger tags
+5. Verification: Test equipment to ensure zero energy state
+
+PERSONAL PROTECTIVE EQUIPMENT:
+- Safety glasses required at all times
+- Insulated tools for electrical work
+- Voltage-rated gloves appropriate for system voltage
+- Arc-rated clothing for energized work
+- Hard hat when overhead hazards exist
+
+ARC FLASH PROTECTION:
+Category 1: 4 cal/cm² minimum - Arc-rated shirt and pants
+Category 2: 8 cal/cm² minimum - Arc-rated face shield required
+Category 3: 25 cal/cm² minimum - Arc flash suit required
+Category 4: 40 cal/cm² minimum - Maximum protection required
+
+VOLTAGE TESTING:
+- Always test meter on known live source first
+- Use proper voltage-rated test equipment
+- Test each phase to ground and phase-to-phase
+- Verify meter still functional after testing

@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Technician Support Chatbot{% endblock %}
+
+{% block navigation %}
+<nav class="bg-gray-800 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center space-x-4">
+                <a href="{{ url_for('index') }}" class="flex items-center space-x-2 text-white hover:text-gray-300">
+                    <i class="fas fa-tools text-xl"></i>
+                    <span class="font-semibold">Technician Support</span>
+                </a>
+                <span class="text-gray-400">|</span>
+                <span class="text-lg font-semibold">Admin Dashboard</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-sm text-gray-300">
+                    <i class="fas fa-user mr-1"></i>{{ current_user.username }}
+                </div>
+                <a href="{{ url_for('auth.logout') }}" class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded text-sm">
+                    <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Admin Navigation Tabs -->
+<div class="bg-gray-700 border-b border-gray-600">
+    <div class="container mx-auto px-4">
+        <div class="flex space-x-8">
+            <a href="{{ url_for('admin.dashboard') }}" 
+               class="py-3 px-1 border-b-2 border-blue-500 text-blue-300 font-medium text-sm">
+                <i class="fas fa-tachometer-alt mr-1"></i>Dashboard
+            </a>
+            <a href="{{ url_for('admin.metrics') }}" 
+               class="py-3 px-1 border-b-2 border-transparent text-gray-300 hover:text-white hover:border-gray-300 font-medium text-sm">
+                <i class="fas fa-chart-bar mr-1"></i>Analytics
+            </a>
+            <a href="{{ url_for('admin.chat_logs') }}" 
+               class="py-3 px-1 border-b-2 border-transparent text-gray-300 hover:text-white hover:border-gray-300 font-medium text-sm">
+                <i class="fas fa-comments mr-1"></i>Chat Logs
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <!-- Key Metrics Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Total Interactions -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center">
+                <div class="p-2 rounded-md bg-blue-500 bg-opacity-10">
+                    <i class="fas fa-comments text-2xl text-blue-500"></i>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">Total Interactions</p>
+                    <p class="text-2xl font-semibold text-gray-900">{{ total_interactions }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Interactions (24h) -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center">
+                <div class="p-2 rounded-md bg-green-500 bg-opacity-10">
+                    <i class="fas fa-clock text-2xl text-green-500"></i>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">Last 24 Hours</p>
+                    <p class="text-2xl font-semibold text-gray-900">{{ recent_interactions }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Average Confidence -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center">
+                <div class="p-2 rounded-md bg-yellow-500 bg-opacity-10">
+                    <i class="fas fa-brain text-2xl text-yellow-500"></i>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">Avg Confidence</p>
+                    <p class="text-2xl font-semibold text-gray-900">{{ "%.1f" | format(avg_confidence * 100) }}%</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- User Rating -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center">
+                <div class="p-2 rounded-md bg-purple-500 bg-opacity-10">
+                    <i class="fas fa-star text-2xl text-purple-500"></i>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">Avg Rating</p>
+                    <p class="text-2xl font-semibold text-gray-900">{{ "%.1f" | format(avg_rating) if avg_rating else "N/A" }}/5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Recent Chat Activity -->
+        <div class="bg-white rounded-lg shadow">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">
+                    <i class="fas fa-history mr-2"></i>Recent Chat Activity
+                </h3>
+            </div>
+            <div class="p-6">
+                {% if recent_chats %}
+                    <div class="space-y-4">
+                        {% for chat in recent_chats %}
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-900 truncate">
+                                            {{ chat.user_query[:80] }}{% if chat.user_query|length > 80 %}...{% endif %}
+                                        </p>
+                                        <div class="mt-1 flex items-center space-x-4 text-xs text-gray-500">
+                                            <span>
+                                                <i class="fas fa-tag mr-1"></i>{{ chat.intent }}
+                                            </span>
+                                            <span>
+                                                <i class="fas fa-tachometer-alt mr-1"></i>{{ "%.0f" | format(chat.confidence * 100) }}%
+                                            </span>
+                                            <span>
+                                                <i class="fas fa-clock mr-1"></i>{{ chat.timestamp.strftime('%H:%M') }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                            {% if chat.response_source == 'rule_based' %}bg-green-100 text-green-800
+                                            {% elif chat.response_source == 'llm' %}bg-blue-100 text-blue-800
+                                            {% else %}bg-gray-100 text-gray-800{% endif %}">
+                                            {{ chat.response_source }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a href="{{ url_for('admin.chat_logs') }}" 
+                           class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View All Chat Logs <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                {% else %}
+                    <p class="text-gray-500 text-center py-8">No recent chat activity</p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Intent Distribution Chart -->
+        <div class="bg-white rounded-lg shadow">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">
+                    <i class="fas fa-chart-pie mr-2"></i>Intent Distribution
+                </h3>
+            </div>
+            <div class="p-6">
+                <canvas id="intentChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- System Management -->
+    <div class="mt-8 bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">
+                <i class="fas fa-cogs mr-2"></i>System Management
+            </h3>
+        </div>
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Model Retraining -->
+                <div class="text-center">
+                    <div class="p-4 bg-blue-50 rounded-lg mb-4">
+                        <i class="fas fa-brain text-3xl text-blue-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-900">Retrain Models</h4>
+                        <p class="text-sm text-gray-600 mt-1">Update intent classifier with latest data</p>
+                    </div>
+                    <button onclick="retrainModels()" 
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                        <i class="fas fa-sync mr-1"></i>Retrain
+                    </button>
+                </div>
+                
+                <!-- Knowledge Base Reindexing -->
+                <div class="text-center">
+                    <div class="p-4 bg-green-50 rounded-lg mb-4">
+                        <i class="fas fa-database text-3xl text-green-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-900">Reindex Knowledge Base</h4>
+                        <p class="text-sm text-gray-600 mt-1">Update document search index</p>
+                    </div>
+                    <button onclick="reindexKnowledgeBase()" 
+                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 focus:ring-2 focus:ring-green-500">
+                        <i class="fas fa-refresh mr-1"></i>Reindex
+                    </button>
+                </div>
+                
+                <!-- Export Data -->
+                <div class="text-center">
+                    <div class="p-4 bg-purple-50 rounded-lg mb-4">
+                        <i class="fas fa-download text-3xl text-purple-600 mb-2"></i>
+                        <h4 class="font-semibold text-gray-900">Export Data</h4>
+                        <p class="text-sm text-gray-600 mt-1">Download chat logs and analytics</p>
+                    </div>
+                    <button onclick="exportData()" 
+                            class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
+                        <i class="fas fa-file-export mr-1"></i>Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Stats -->
+    <div class="mt-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow text-white">
+        <div class="p-6">
+            <h3 class="text-lg font-semibold mb-4">
+                <i class="fas fa-info-circle mr-2"></i>System Status
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl font-bold">{{ response_time_stats.avg_response_time | round(2) if response_time_stats.avg_response_time else 'N/A' }}</div>
+                    <div class="text-blue-200 text-sm">Avg Response Time (s)</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold">{{ intent_distribution | length }}</div>
+                    <div class="text-blue-200 text-sm">Intent Categories</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold">Online</div>
+                    <div class="text-blue-200 text-sm">System Status</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold">{{ current_date.strftime('%b %d') }}</div>
+                    <div class="text-blue-200 text-sm">Last Updated</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Modal -->
+<div id="loadingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 max-w-sm mx-4">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Processing...</h3>
+            <p class="text-gray-600" id="loadingMessage">Please wait while we process your request.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Chart.js for Intent Distribution
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('intentChart').getContext('2d');
+    const intentData = {{ intent_distribution | tojson }};
+    
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: intentData.map(item => item._id),
+            datasets: [{
+                data: intentData.map(item => item.count),
+                backgroundColor: [
+                    '#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6',
+                    '#06B6D4', '#84CC16', '#F97316', '#EC4899', '#6B7280'
+                ],
+                borderWidth: 2,
+                borderColor: '#FFFFFF'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}

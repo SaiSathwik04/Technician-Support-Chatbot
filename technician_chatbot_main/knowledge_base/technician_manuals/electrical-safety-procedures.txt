@@ -1,0 +1,330 @@
+# Electrical Safety Procedures - Industrial Maintenance
+
+## SECTION 1: ELECTRICAL SAFETY OVERVIEW
+This manual provides comprehensive electrical safety procedures for maintenance personnel working on industrial electrical systems. All procedures must comply with NFPA 70E and OSHA 1910 Subpart S requirements.
+
+## SECTION 2: LOCKOUT/TAGOUT (LOTO) PROCEDURES
+
+### 2.1 PREPARATION FOR LOTO
+**Before Beginning Work:**
+1. Identify all energy sources that could cause injury
+2. Notify all affected personnel of planned work
+3. Gather required LOTO devices and tools
+4. Review equipment-specific energy control procedure
+5. Ensure adequate lighting and access to work area
+
+### 2.2 STEP-BY-STEP LOTO PROCEDURE
+
+**Step 1: Equipment Shutdown**
+1. Follow normal equipment shutdown sequence
+2. Allow all moving parts to come to complete stop
+3. Ensure all stored energy is released safely
+4. Verify equipment is in zero-energy state
+
+**Step 2: Energy Source Isolation**
+1. Operate all energy-isolating devices:
+   - Main electrical disconnects
+   - Circuit breakers and fuses
+   - Pneumatic supply valves
+   - Hydraulic shutoff valves
+   - Steam isolation valves
+   - Gas supply valves
+
+2. Apply LOTO devices:
+   - Individual padlocks on each energy source
+   - Danger tags with worker information
+   - Multiple lockout devices if needed
+   - Group lockout for team work
+
+**Step 3: Verification of Isolation**
+1. Attempt to start equipment (should not operate)
+2. Use digital multimeter to verify zero voltage
+3. Test voltage tester on known live source first
+4. Check for stored energy in:
+   - Capacitors and electrical circuits
+   - Compressed air systems
+   - Hydraulic accumulators
+   - Elevated equipment or counterweights
+
+### 2.3 RESTORATION PROCEDURES
+**After Work Completion:**
+1. Remove all tools and materials from work area
+2. Reinstall all guards and safety devices
+3. Ensure all personnel are clear of equipment
+4. Remove LOTO devices (only by person who applied them)
+5. Restore energy sources in proper sequence
+6. Test equipment operation before returning to service
+
+## SECTION 3: PERSONAL PROTECTIVE EQUIPMENT (PPE)
+
+### 3.1 ARC FLASH PROTECTION
+**Arc Flash Risk Assessment Required for:**
+- Work on or near energized electrical conductors
+- Equipment operating at 50 volts or higher
+- Tasks that could result in electric arc
+
+**PPE Categories (NFPA 70E):**
+- **Category 1:** 4 cal/cm² minimum
+  - Arc-rated long-sleeve shirt and pants
+  - Arc-rated face shield or hood
+  - Safety glasses, hard hat, leather gloves
+
+- **Category 2:** 8 cal/cm² minimum
+  - Arc-rated shirt and pants
+  - Arc-rated face shield and balaclava
+  - Safety glasses, hard hat, leather gloves
+
+- **Category 3:** 25 cal/cm² minimum
+  - Arc-rated shirt and pants
+  - Arc-rated coverall or arc flash suit
+  - Arc-rated face shield and balaclava
+  - Safety glasses, hard hat, leather gloves
+
+- **Category 4:** 40 cal/cm² minimum
+  - Arc-rated shirt and pants
+  - Arc-rated coverall and arc flash suit
+  - Arc-rated face shield and balaclava
+  - Safety glasses, hard hat, leather gloves
+
+### 3.2 ELECTRICAL PROTECTIVE EQUIPMENT
+
+**Insulated Tools:**
+- Voltage rating appropriate for system
+- Inspect before each use for damage
+- Test dielectric strength annually
+- Store in protective cases when not in use
+
+**Voltage-Rated Gloves:**
+- Class 00: Up to 500V AC
+- Class 0: Up to 1,000V AC
+- Class 1: Up to 7,500V AC
+- Class 2: Up to 17,000V AC
+- Class 3: Up to 26,500V AC
+- Class 4: Up to 36,000V AC
+
+**Glove Care and Testing:**
+- Air test before each use
+- Visual inspection for cuts, tears, ozone damage
+- Electrical testing every 6 months
+- Use leather protectors over rubber gloves
+
+## SECTION 4: ELECTRICAL TESTING PROCEDURES
+
+### 4.1 VOLTAGE TESTING
+**Before Testing:**
+1. Verify test instrument on known live source
+2. Select appropriate voltage range
+3. Use proper test leads and probes
+4. Wear appropriate PPE for voltage level
+
+**Testing Procedure:**
+1. Approach conductor carefully
+2. Test each phase to ground
+3. Test phase to phase voltages
+4. Record all measurements
+5. Verify test instrument still functional after testing
+
+### 4.2 INSULATION RESISTANCE TESTING
+**Equipment Required:**
+- Megohmmeter rated for system voltage
+- Test leads with appropriate voltage rating
+- Recording forms for documentation
+
+**Testing Procedure:**
+1. De-energize and lock out circuit
+2. Disconnect equipment from power source
+3. Discharge any capacitors
+4. Connect megger test leads
+5. Apply test voltage for 1 minute
+6. Record insulation resistance values
+
+**Acceptance Criteria:**
+- New installations: >100 megohms
+- Existing equipment: >1 megohm per 1000V + 1 megohm
+- Minimum acceptable: 1 megohm
+
+### 4.3 CONTINUITY TESTING
+**Purpose:** Verify conductor integrity and grounding paths
+
+**Procedure:**
+1. De-energize circuit completely
+2. Set multimeter to resistance (ohms) function
+3. Test conductor end-to-end
+4. Verify ground conductor continuity
+5. Check bonding jumper connections
+
+## SECTION 5: WORKING ON ENERGIZED EQUIPMENT
+
+### 5.1 JUSTIFICATION FOR ENERGIZED WORK
+**Energized work permitted only when:**
+- De-energizing creates greater hazards
+- Required for troubleshooting and testing
+- Work on continuous process systems
+- Written justification approved by management
+
+### 5.2 ENERGIZED WORK PERMITS
+**Required Elements:**
+- Description of work to be performed
+- Justification for energized work
+- Risk assessment and safety measures
+- PPE requirements based on incident energy
+- Qualified person approval signatures
+- Emergency response procedures
+
+### 5.3 APPROACH BOUNDARIES
+**Limited Approach Boundary:**
+- Distance where unqualified person may not approach
+- Based on system voltage level
+- Training required to cross this boundary
+
+**Restricted Approach Boundary:**
+- Distance where qualified person may not approach
+- Additional PPE required
+- Supervisor approval needed
+
+**Prohibited Approach Boundary:**
+- Considered same as contact with energized conductor
+- Only qualified persons with special training
+- Maximum PPE requirements
+
+## SECTION 6: ELECTRICAL SYSTEM MAINTENANCE
+
+### 6.1 MOTOR CONTROL CENTER (MCC) MAINTENANCE
+**Quarterly Inspection:**
+- Visual inspection of bus bars for corrosion
+- Check control wire connections
+- Test operation of contactors and overloads
+- Verify proper ventilation and cooling
+- Clean dust and debris from enclosures
+
+**Annual Maintenance:**
+- Torque all bolted connections per manufacturer specs
+- Test insulation resistance of bus work
+- Calibrate protective relays
+- Test ground fault protection systems
+- Update electrical drawings as needed
+
+### 6.2 TRANSFORMER MAINTENANCE
+**Monthly Checks:**
+- Record loading levels
+- Check cooling system operation
+- Monitor oil level and temperature
+- Inspect for leaks and unusual noises
+- Verify tap changer operation
+
+**Annual Testing:**
+- Oil analysis for dielectric strength
+- Insulation resistance testing
+- Turns ratio testing
+- Impedance testing
+- Ground resistance verification
+
+### 6.3 SWITCHGEAR MAINTENANCE
+**Semi-Annual Inspection:**
+- Check all mechanical operations
+- Lubricate operating mechanisms
+- Test protective relay calibration
+- Verify control power supply
+- Inspect for tracking and corona damage
+
+**Biennial Testing:**
+- Primary injection testing of protective relays
+- Dielectric testing of circuit breakers
+- Contact resistance measurements
+- Timing tests of breaker operations
+- Insulation resistance testing
+
+## SECTION 7: EMERGENCY PROCEDURES
+
+### 7.1 ELECTRICAL SHOCK RESPONSE
+**If Person is Still in Contact with Electricity:**
+1. Do NOT touch the victim
+2. Turn off power source immediately
+3. If power cannot be turned off, use insulated implement to separate victim
+4. Call for emergency medical assistance
+5. Begin CPR if qualified and victim needs it
+
+**After Victim is Separated from Electrical Source:**
+1. Check for consciousness and breathing
+2. Look for entrance and exit wounds
+3. Monitor for signs of shock
+4. Keep victim warm and lying down
+5. Do not give food or water
+
+### 7.2 ELECTRICAL FIRE RESPONSE
+**Class C Electrical Fires:**
+1. De-energize equipment if safely possible
+2. Use only Class C fire extinguishers on energized equipment
+3. Never use water on energized electrical equipment
+4. Evacuate area if fire cannot be controlled quickly
+5. Call fire department even for small fires
+
+**After De-energizing:**
+- Class A extinguishers may be used
+- Water can be used if equipment is completely de-energized
+- Be aware of potential re-energization
+
+### 7.3 ARC FLASH INCIDENT
+**Immediate Response:**
+1. Shut off power source if safely accessible
+2. Call emergency medical services
+3. Do not touch victim until power is confirmed off
+4. Remove victim from area if safe to do so
+5. Treat for burns and shock
+
+**Follow-up Actions:**
+- Investigate cause of arc flash
+- Review and update arc flash study
+- Retrain personnel as needed
+- Inspect equipment for damage
+
+## SECTION 8: ELECTRICAL SAFETY TRAINING
+
+### 8.1 QUALIFIED PERSON REQUIREMENTS
+**Training Must Include:**
+- Electrical hazard recognition
+- Proper use of PPE and test equipment
+- LOTO procedures and verification
+- Arc flash hazard assessment
+- Emergency response procedures
+- Hands-on practical exercises
+
+**Retraining Required:**
+- Every 3 years minimum
+- When new hazards are introduced
+- After any electrical incident
+- When job assignments change
+
+### 8.2 UNQUALIFIED PERSON TRAINING
+**Basic Electrical Safety:**
+- Recognition of electrical hazards
+- Understanding of approach boundaries
+- When to notify qualified persons
+- Basic emergency response
+- Use of appropriate PPE
+
+## SECTION 9: ELECTRICAL CODES AND STANDARDS
+
+### 9.1 APPLICABLE STANDARDS
+- **NFPA 70E:** Standard for Electrical Safety in the Workplace
+- **NFPA 70:** National Electrical Code (NEC)
+- **OSHA 1910.331-335:** Electrical Safety Standards
+- **IEEE 1584:** Guide for Arc Flash Hazard Calculations
+- **ASTM F496:** Standard Specification for In-Service Care of Insulating Gloves
+
+### 9.2 RECORD KEEPING REQUIREMENTS
+**Required Documentation:**
+- Employee training records
+- Equipment maintenance records
+- Electrical testing results
+- Incident investigation reports
+- PPE inspection and testing records
+- LOTO procedure updates
+
+**Retention Periods:**
+- Training records: 3 years minimum
+- Testing records: Life of equipment
+- Incident reports: 5 years minimum
+- PPE testing: Until next test due
+
+This electrical safety manual provides essential procedures for safe work on industrial electrical systems. All personnel must be properly trained and follow these procedures without exception.

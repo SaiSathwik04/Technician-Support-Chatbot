@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Technician Support Chatbot{% endblock %}</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/admin.css') }}" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    {% block navigation %}{% endblock %}
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="fixed top-4 right-4 z-50 space-y-2">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'success' if category == 'success' else 'error' if category == 'error' else 'info' }} 
+                                bg-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-100 
+                                border border-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-300 
+                                text-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-800 
+                                px-4 py-3 rounded-md shadow-lg max-w-md">
+                        <div class="flex items-center justify-between">
+                            <span>{{ message }}</span>
+                            <button onclick="this.parentElement.parentElement.remove()" 
+                                    class="ml-4 text-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-600 hover:text-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-800">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; {{ current_year }} Technician Support Chatbot. Built for industrial maintenance.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <span class="text-sm text-gray-400">
+                        <i class="fas fa-tools mr-1"></i>
+                        Professional Technical Support
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+    
+    {% block scripts %}{% endblock %}
+    
+    <!-- Auto-hide flash messages -->
+    <script>
+        // Auto-hide flash messages after 5 seconds
+        setTimeout(function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                alert.style.opacity = '0';
+                setTimeout(function() {
+                    if (alert.parentElement) {
+                        alert.remove();
+                    }
+                }, 300);
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "technician-support-chatbot",
+  "version": "1.0.0",
+  "description": "AI-powered technical support chatbot for industrial maintenance",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch",
+    "build-css-prod": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify",
+    "dev": "concurrently \"python run.py\" \"npm run build-css\"",
+    "start": "python run.py"
+  },
+  "keywords": [
+    "chatbot",
+    "technical-support",
+    "maintenance",
+    "industrial",
+    "ai",
+    "flask",
+    "tailwindcss"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.3.2"
+  }
+}

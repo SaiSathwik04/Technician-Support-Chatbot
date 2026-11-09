@@ -1,0 +1,41 @@
+HVAC Maintenance Manual - Industrial Systems
+
+AIR HANDLING UNIT MAINTENANCE:
+
+Filter Maintenance:
+- Visual check weekly during peak season
+- Replace when pressure drop exceeds manufacturer limits
+- Use correct MERV rating for application
+- Record filter changes with dates and types
+
+Coil Maintenance:
+- Check for bent or damaged fins monthly
+- Clean coils with approved cleaning solutions
+- Verify proper drainage from condensate pan
+- Measure entering and leaving air temperatures
+
+Fan System:
+- Check belt tension: 1/64" deflection per inch of span
+- Inspect belts for cracks, fraying, or glazing
+- Verify proper rotation direction
+- Monitor motor current and compare to nameplate
+
+CHILLER MAINTENANCE:
+
+Daily Checks:
+- Record suction and discharge pressures
+- Monitor oil pressure and temperature
+- Check refrigerant sight glass for bubbles
+- Verify proper superheat and subcooling
+
+Weekly Tasks:
+- Check oil level and condition
+- Test safety controls and alarms
+- Inspect electrical connections
+- Monitor approach temperatures
+
+Monthly Tasks:
+- Oil analysis for acid and moisture
+- Vibration analysis of compressor
+- Refrigerant leak testing
+- Heat exchanger inspection

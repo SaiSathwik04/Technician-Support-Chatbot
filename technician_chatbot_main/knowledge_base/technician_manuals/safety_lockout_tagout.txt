@@ -1,0 +1,41 @@
+Safety Lockout/Tagout Procedures - Complete Guide
+
+ENERGY CONTROL PROCEDURE:
+
+Step 1 - Preparation:
+- Identify equipment and energy sources
+- Review equipment-specific procedures
+- Gather required locks, tags, and tools
+- Notify all affected personnel
+
+Step 2 - Shutdown:
+- Follow normal operating procedures
+- Allow all moving parts to stop completely
+- Verify equipment is in zero-energy state
+
+Step 3 - Isolation:
+- Locate and operate energy isolating devices
+- Electrical: Circuit breakers, disconnects
+- Pneumatic: Air supply valves, bleed air
+- Hydraulic: Isolation valves, relieve pressure
+- Mechanical: Block moving parts, relieve springs
+
+Step 4 - Lockout Application:
+- Apply individual locks to each energy source
+- Attach danger tags with worker information
+- Use group lockout procedures for multiple workers
+- Each worker applies their own lock
+
+Step 5 - Verification:
+- Test equipment controls (should not operate)
+- Use meters to verify zero voltage
+- Check for stored energy in capacitors, springs, pressure
+- Return controls to neutral position
+
+RESTORATION PROCEDURE:
+1. Remove all tools and materials
+2. Reinstall guards and safety devices
+3. Ensure all personnel are clear
+4. Remove locks (only by person who applied them)
+5. Restore energy sources in proper sequence
+6. Test equipment operation

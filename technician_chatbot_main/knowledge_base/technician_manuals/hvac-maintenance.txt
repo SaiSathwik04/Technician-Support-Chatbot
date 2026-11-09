@@ -1,0 +1,360 @@
+# HVAC Maintenance Manual - Industrial Systems
+
+## SECTION 1: HVAC SYSTEM OVERVIEW
+This manual covers maintenance procedures for industrial HVAC systems including air handling units, chillers, boilers, cooling towers, and associated equipment.
+
+## SECTION 2: AIR HANDLING UNIT (AHU) MAINTENANCE
+
+### 2.1 FILTER MAINTENANCE
+**Filter Types and Applications:**
+- **Pleated Filters:** MERV 8-13, general applications
+- **HEPA Filters:** MERV 17-20, clean rooms and critical areas
+- **Carbon Filters:** Odor and gas removal
+- **Electrostatic Filters:** Permanent, washable type
+
+**Inspection Schedule:**
+- **Visual Check:** Weekly during peak season
+- **Pressure Drop Measurement:** Monthly with manometer
+- **Replacement:** When pressure drop exceeds manufacturer limits
+- **Documentation:** Log all filter changes with dates and types
+
+**Filter Replacement Procedure:**
+1. Lock out air handling unit
+2. Open access door safely
+3. Remove dirty filter (wear dust mask)
+4. Check filter frame for damage
+5. Install new filter with airflow arrow pointing downstream
+6. Ensure proper fit and seal
+7. Record filter size, MERV rating, and installation date
+
+### 2.2 COIL MAINTENANCE
+**Cooling Coil Inspection:**
+- Check for bent or damaged fins
+- Look for signs of corrosion or leakage
+- Verify proper drainage from condensate pan
+- Measure entering and leaving air temperatures
+- Check refrigerant pressures (if direct expansion)
+
+**Heating Coil Inspection:**
+- Hot water coils: Check for leaks, verify control valve operation
+- Steam coils: Inspect steam traps, check for condensate removal
+- Electric coils: Test heating elements, check electrical connections
+- Gas-fired coils: Inspect heat exchanger, test safety controls
+
+**Coil Cleaning Procedure:**
+1. Shut down and lock out unit
+2. Remove downstream filters to prevent contamination
+3. Apply coil cleaning solution per manufacturer instructions
+4. Allow dwell time for cleaning solution to work
+5. Rinse thoroughly with water from leaving air side
+6. Straighten bent fins with fin comb
+7. Check coil for leaks before returning to service
+
+### 2.3 FAN AND MOTOR MAINTENANCE
+**Belt-Driven Fans:**
+- Check belt tension: 1/64" deflection per inch of span
+- Inspect belts for cracks, fraying, or glazing
+- Verify proper belt alignment
+- Check pulley condition and tightness
+- Lubricate motor and fan bearings per schedule
+
+**Direct-Drive Fans:**
+- Check fan wheel balance and condition
+- Inspect mounting hardware for tightness
+- Verify proper rotation direction
+- Monitor motor current and compare to nameplate
+- Check vibration levels with portable analyzer
+
+**Fan Performance Testing:**
+- Measure static pressure across fan
+- Calculate air flow using pitot tube traverse
+- Check motor amperage and power factor
+- Compare results to design specifications
+- Plot on fan performance curve
+
+### 2.4 DAMPER AND ACTUATOR MAINTENANCE
+**Manual Dampers:**
+- Check for proper operation and sealing
+- Lubricate linkages and pivot points
+- Verify position indicators are accurate
+- Test emergency position operation
+
+**Automated Dampers:**
+- Test actuator response to control signals
+- Check end switch operation
+- Verify fail-safe position on power loss
+- Calibrate actuator stroke and timing
+- Inspect linkages for wear and proper adjustment
+
+## SECTION 3: CHILLER MAINTENANCE
+
+### 3.1 COMPRESSOR MAINTENANCE
+**Daily Checks:**
+- Record suction and discharge pressures
+- Monitor oil pressure and temperature
+- Check refrigerant sight glass for bubbles
+- Verify proper superheat and subcooling
+- Listen for unusual noises or vibration
+
+**Weekly Maintenance:**
+- Check oil level and condition
+- Test high and low pressure cutouts
+- Verify proper operation of unloading systems
+- Check condenser and evaporator approach temperatures
+- Inspect electrical connections for tightness
+
+**Monthly Maintenance:**
+- Oil analysis for acid number and moisture content
+- Vibration analysis of compressor and motor
+- Check refrigerant charge and leak test
+- Inspect heat exchanger tubes for fouling
+- Test safety controls and alarms
+
+### 3.2 CONDENSER MAINTENANCE
+**Air-Cooled Condensers:**
+- Clean condenser coils monthly or as needed
+- Check fan motor operation and current draw
+- Verify proper refrigerant subcooling (8-12°F typical)
+- Inspect for bent fins and straighten as needed
+- Check condenser fan cycling controls
+
+**Water-Cooled Condensers:**
+- Monitor condenser water temperature rise
+- Check for proper water flow rate
+- Perform tube cleaning as indicated by approach temperature
+- Test water treatment chemical levels
+- Inspect water boxes and tube sheets for corrosion
+
+**Cleaning Procedures:**
+1. **Mechanical Cleaning:** Use brushes or tube cleaners
+2. **Chemical Cleaning:** Circulate approved cleaning solutions
+3. **High-Pressure Water:** For heavy fouling or deposits
+4. **Freeze Protection:** Ensure proper glycol concentration
+
+### 3.3 EVAPORATOR MAINTENANCE
+**Performance Monitoring:**
+- Record entering and leaving water temperatures
+- Calculate heat transfer rate and compare to design
+- Monitor approach temperature (typically 2-4°F)
+- Check for proper chilled water flow rate
+- Verify water treatment chemical levels
+
+**Tube Cleaning:**
+- Perform when approach temperature increases >1°F
+- Use mechanical brushes for soft deposits
+- Chemical cleaning for scale or biological growth
+- Eddy current testing after cleaning to check tube integrity
+
+### 3.4 CONTROL SYSTEM MAINTENANCE
+**Electronic Controls:**
+- Check control panel for error codes or alarms
+- Verify proper operation of all sensors
+- Test communication between controllers
+- Update software and control parameters as needed
+- Document all control settings and setpoints
+
+**Pneumatic Controls:**
+- Check air supply pressure (typically 20 PSI)
+- Test operation of all control valves
+- Calibrate pneumatic transmitters and receivers
+- Inspect tubing for leaks or damage
+- Clean and adjust control valves as needed
+
+## SECTION 4: BOILER MAINTENANCE
+
+### 4.1 DAILY BOILER OPERATIONS
+**Visual Inspections:**
+- Check water level in gauge glass
+- Monitor steam pressure and water temperature
+- Observe flame characteristics (color, shape, stability)
+- Check for water or steam leaks
+- Verify proper operation of feed water pump
+
+**Operational Tests:**
+- Test low water cutoff operation
+- Verify proper pressure relief valve operation
+- Check boiler water chemical treatment levels
+- Test high pressure limit switch
+- Verify flame safeguard system operation
+
+### 4.2 WATER TREATMENT MAINTENANCE
+**Boiler Water Testing (Daily):**
+- pH level: 10.5-11.5 for low pressure boilers
+- Alkalinity: 200-400 ppm as CaCO3
+- Chloride content: <15 ppm
+- Dissolved oxygen: <0.007 ppm
+- Sulfite residual: 20-40 ppm
+
+**Feed Water Testing:**
+- Total dissolved solids
+- Hardness (should be <1 ppm)
+- Iron content (<0.3 ppm)
+- Dissolved oxygen (<0.007 ppm)
+- pH (8.5-9.0)
+
+**Water Treatment Equipment:**
+- Test water softener regeneration cycles
+- Check chemical feed pump operation
+- Monitor deaerator operation and temperature
+- Inspect feed water tank for corrosion
+- Verify proper blowdown procedures
+
+### 4.3 COMBUSTION SYSTEM MAINTENANCE
+**Burner Maintenance:**
+- Clean and inspect burner assembly
+- Check gas or oil supply pressure
+- Test ignition system operation
+- Verify proper air/fuel ratio settings
+- Inspect flame scanner and controls
+
+**Combustion Analysis:**
+- Measure stack temperature (typically 300-500°F above steam temp)
+- Check oxygen content in flue gas (2-4% for natural gas)
+- Measure carbon monoxide levels (<50 ppm)
+- Calculate combustion efficiency
+- Adjust burner settings for optimal efficiency
+
+## SECTION 5: COOLING TOWER MAINTENANCE
+
+### 5.1 MECHANICAL MAINTENANCE
+**Fan System:**
+- Check fan blade condition and balance
+- Inspect gear reducer oil level and condition
+- Verify proper belt tension and alignment
+- Check fan motor current and vibration
+- Test variable frequency drive operation
+
+**Water Distribution System:**
+- Clean spray nozzles and distribution basins
+- Check for proper water flow patterns
+- Inspect distribution piping for clogs
+- Verify pump operation and flow rates
+- Check water level controls and makeup systems
+
+### 5.2 WATER TREATMENT
+**Weekly Water Testing:**
+- pH level (6.5-8.5)
+- Conductivity and cycles of concentration
+- Total alkalinity and hardness
+- Chloride and sulfate levels
+- Biological growth indicators
+
+**Chemical Treatment:**
+- Corrosion inhibitors for metal protection
+- Scale inhibitors to prevent mineral deposits
+- Biocides to control biological growth
+- pH adjustment chemicals as needed
+- Bleed-off controls to maintain proper cycles
+
+### 5.3 STRUCTURAL MAINTENANCE
+**Fill Material:**
+- Inspect for biological growth or fouling
+- Check for proper water distribution over fill
+- Look for damaged or missing fill sections
+- Clean fill material as needed
+- Replace deteriorated sections
+
+**Tower Structure:**
+- Inspect concrete or fiberglass for cracks
+- Check steel components for corrosion
+- Verify proper caulking and sealing
+- Test structural integrity of platforms and railings
+- Inspect access ladders and safety equipment
+
+## SECTION 6: PREVENTIVE MAINTENANCE SCHEDULES
+
+### 6.1 DAILY TASKS (M-F)
+- Record all operating temperatures and pressures
+- Check and record energy consumption
+- Visual inspection for leaks, noise, or unusual operation
+- Check automatic control system operation
+- Test emergency shutdown systems
+- Monitor water treatment chemical levels
+
+### 6.2 WEEKLY TASKS
+- Lubricate all equipment per manufacturer schedules
+- Check and tighten all belt tensions
+- Test operation of all dampers and control valves
+- Clean or replace air filters as needed
+- Check refrigerant levels and leak test
+- Perform water quality testing
+
+### 6.3 MONTHLY TASKS
+- Complete performance testing of all major equipment
+- Check electrical connections and motor current
+- Inspect heat exchangers for fouling
+- Test all safety controls and alarms
+- Review and analyze trending data
+- Update maintenance records
+
+### 6.4 QUARTERLY TASKS
+- Precision alignment of all rotating equipment
+- Comprehensive vibration analysis
+- Infrared thermal imaging of electrical systems
+- Oil analysis for all lubricated equipment
+- Test emergency power systems
+- Review and update maintenance procedures
+
+### 6.5 ANNUAL TASKS
+- Complete disassembly and inspection of critical equipment
+- Hydrostatic testing of pressure vessels
+- Calibration of all instrumentation
+- Testing of fire and life safety systems
+- Energy audit and efficiency analysis
+- Review and update operational procedures
+
+## SECTION 7: TROUBLESHOOTING GUIDE
+
+### 7.1 COMMON HVAC PROBLEMS
+
+**Insufficient Cooling/Heating:**
+- Check thermostat calibration and location
+- Verify proper air filter condition
+- Check for blocked or closed dampers
+- Measure actual air flow rates
+- Inspect heat exchangers for fouling
+- Check refrigerant charge and pressures
+
+**High Energy Consumption:**
+- Compare actual vs. design operating conditions
+- Check for simultaneous heating and cooling
+- Verify proper equipment staging and controls
+- Inspect for air leaks in ductwork
+- Check equipment efficiency and performance
+- Review operating schedules and setpoints
+
+**Poor Indoor Air Quality:**
+- Check outdoor air damper operation
+- Verify proper filtration and filter condition
+- Test for proper ventilation rates
+- Check for contamination sources
+- Verify proper humidity control
+- Inspect for mold or biological growth
+
+### 7.2 EMERGENCY PROCEDURES
+
+**Equipment Failure:**
+1. Safely shut down affected equipment
+2. Isolate utilities (electrical, gas, water)
+3. Assess impact on building occupants
+4. Implement backup systems if available
+5. Contact service technicians or vendors
+6. Document failure and response actions
+
+**Refrigerant Leak:**
+1. Evacuate area if large leak
+2. Shut down affected equipment
+3. Ventilate area thoroughly
+4. Locate and isolate leak source
+5. Contact certified technician for repairs
+6. Report to environmental authorities if required
+
+**Water Leak:**
+1. Shut off water supply immediately
+2. Remove water to prevent damage
+3. Check for electrical hazards
+4. Assess structural damage potential
+5. Begin drying process quickly
+6. Document damage for insurance claims
+
+This HVAC maintenance manual provides comprehensive procedures for maintaining industrial HVAC systems safely and efficiently.

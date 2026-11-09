@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Chat Logs - Technician Support Chatbot{% endblock %}
+
+{% block navigation %}
+<nav class="bg-gray-800 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center space-x-4">
+                <a href="{{ url_for('index') }}" class="flex items-center space-x-2 text-white hover:text-gray-300">
+                    <i class="fas fa-tools"></i>
+                    <span class="font-semibold">Technician Support</span>
+                </a>
+                <span class="text-gray-400">|</span>
+                <span class="text-lg font-semibold">Chat Logs</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-sm text-gray-300">
+                    <i class="fas fa-user mr-1"></i>{{ current_user.username }}
+                </div>
+                <a href="{{ url_for('auth.logout') }}" class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded text-sm">
+                    <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <!-- Page Header -->
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-900">Chat Logs</h1>
+        <p class="text-gray-600">View, filter, and analyze chatbot interactions</p>
+    </div>
+
+    <!-- Filters -->
+    <form method="get" class="mb-6 flex flex-wrap gap-4 items-center bg-white rounded-lg shadow p-4">
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Intent</label>
+            <input type="text" name="intent" value="{{ filters.intent or '' }}" placeholder="Intent to filter" class="mt-1 block w-48 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Source</label>
+            <input type="text" name="source" value="{{ filters.source or '' }}" placeholder="Response source" class="mt-1 block w-48 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Date From</label>
+            <input type="date" name="date_from" value="{{ filters.date_from or '' }}" class="mt-1 block rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Date To</label>
+            <input type="date" name="date_to" value="{{ filters.date_to or '' }}" class="mt-1 block rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div class="self-end">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Filter</button>
+            <a href="{{ url_for('admin.chat_logs') }}" class="ml-2 text-gray-500 hover:text-gray-700">Clear</a>
+        </div>
+    </form>
+
+    <!-- Chat Logs Table -->
+    <div class="bg-white rounded-lg shadow overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 table-auto">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Timestamp</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User Query</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Intent</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Confidence</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Response Source</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                {% if chat_logs %}
+                    {% for chat in chat_logs %}
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ chat.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-900">{{ chat.user_query }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ chat.intent or 'N/A' }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ "%.0f" | format((chat.confidence or 0) * 100) }}%</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                {% if chat.response_source == 'rule_based' %}bg-green-100 text-green-800
+                                {% elif chat.response_source == 'llm' %}bg-blue-100 text-blue-800
+                                {% else %}bg-gray-100 text-gray-800{% endif %}">
+                                {{ chat.response_source }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="5" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">No chat logs found.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-6 flex justify-between items-center">
+        <div class="text-sm text-gray-700">
+            Showing page {{ page }} of {{ total_pages }} (Total records: {{ total_count }})
+        </div>
+        <div class="space-x-2">
+            {% if page > 1 %}
+                <a href="{{ url_for('admin.chat_logs', page=page-1, per_page=per_page, 
+                                    intent=filters.intent, source=filters.source, 
+                                    date_from=filters.date_from, date_to=filters.date_to) }}" 
+                   class="inline-block px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Previous</a>
+            {% endif %}
+            {% if page < total_pages %}
+                <a href="{{ url_for('admin.chat_logs', page=page+1, per_page=per_page, 
+                                    intent=filters.intent, source=filters.source, 
+                                    date_from=filters.date_from, date_to=filters.date_to) }}" 
+                   class="inline-block px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Next</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+{% endblock %}
